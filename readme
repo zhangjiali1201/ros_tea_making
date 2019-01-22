@@ -1,5 +1,7 @@
-stella_one文件夹内有比赛识别后的图片，主要操作文件都在/stella_one/src/command_control/command_center/node
 pourtea_2018内含语音部分的cpp文件和launch
+
 map_shanghai为赛场地图及任务点坐标
+
 Find_Object_with_Color为物体识别包
+
 servo_arduino内的代码烧录到arduino内，用于控制夹持器
