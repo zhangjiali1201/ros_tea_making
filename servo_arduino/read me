@@ -1,0 +1,14 @@
+测试
+
+    新终端打开
+
+$ roscore
+
+    新终端打开
+
+$ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0
+
+    新终端打开，发送servo主题，角度在 0-180 之间。
+
+$ rostopic pub servo std_msgs/UInt16  <angle>
+

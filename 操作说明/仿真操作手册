@@ -1,0 +1,203 @@
+20180514，edited by jiali zhang
+单独测试语音部分
+cd /home/ros/robocup
+source devel/setup.bash
+roslaunch pourtea_2018 voice.launch
+
+
+
+
+
+
+
+
+
+单独测试导航部分
+cd /home/ros/robocup
+source devel/setup.bash
+roslaunch pourtea_2018 voice.launch //启语音
+
+cd /home/ros/robocup
+source devel/setup.bash
+roslaunch bringup simulate-amada.launch //启地图
+
+cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center nav_test2.py //主框架
+
+
+
+
+
+
+
+
+
+单独测试视觉部分
+roslaunch freenect_launch freenect-registered-xyzrgb.launch 启一下关闭
+cd ../Find_Object_with_Color/Find_Object
+python find_object_function.py 生成图片在cd ../Find_Object_with_Color/Find_Object
+
+
+
+
+
+
+
+
+单独测试机械臂部分
+一.抓取动作测试
+插arduino线
+连接arduino 
+$rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB1
+
+插机械臂线
+启动机械臂配置包 终端2
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit my_moveit.launch
+
+启动图形界面
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit moveit_rviz.launch
+
+软硬件之间的通信,机械臂指令service
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch command_center service.launch
+
+主框架
+su
+cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center catch.py
+
+二.单独测试倾倒动作
+插arduino线
+连接arduino 
+$rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB1
+
+插机械臂线
+启动机械臂配置包 终端2
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit my_moveit.launch
+
+启动图形界面
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit moveit_rviz.launch
+
+软硬件之间的通信,机械臂指令service
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch command_center service.launch
+
+主框架
+su
+cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center pour.py
+
+三.测试机械臂抓取
+插arduino线
+连接arduino 
+$rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB1
+
+插机械臂线
+启动机械臂配置包 终端2
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit my_moveit.launch
+
+启动图形界面
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit moveit_rviz.launch
+
+软硬件之间的通信,机械臂指令service
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch command_center service.launch
+
+主框架
+su
+cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center catch_voice.py
+
+rosrun sound_play soundplay_node.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+综合项目
+插kinect线 终端1
+roslaunch freenect_launch freenect-registered-xyzrgb.launch
+启一下关闭
+ 
+仿真地图 终端1
+cd /home/ros/robocup
+source devel/setup.bash
+roslaunch bringup simulate-amada.launch
+
+语音 终端1
+cd /home/ceshi
+source devel/setup.bash
+roslaunch pourtea_2018 voice.launch
+
+插arduino线
+连接arduino 终端1 
+$rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB1
+
+插机械臂线
+启动机械臂配置包 终端2
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit my_moveit.launch
+
+启动图形界面 终端2
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit moveit_rviz.launch
+
+软硬件之间的通信,机械臂指令service 终端2
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch command_center service.launch
+
+主框架 终端2
+su
+cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center pour_tea_sh.py

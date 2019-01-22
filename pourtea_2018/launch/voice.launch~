@@ -1,0 +1,12 @@
+<launch>
+<!--文本转语音节点-->
+ <node pkg="sound_play" type="soundplay_node.py" name="soundplay_node" output="screen"/>
+
+<!--语音分析节点-->
+ <node pkg="pourtea_2018" type="voice_analysis" name="voice_analysis_node" output="screen" />
+
+ <node name="recognizer" pkg="pocketsphinx" type="recognizer.py">
+    <param name="lm" value="$(find pourtea_2018)/configs/tea.lm"/>
+    <param name="dict" value="$(find pourtea_2018)/configs/tea.dic"/>
+  </node>
+</launch>

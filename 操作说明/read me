@@ -1,0 +1,13 @@
+20180516,edited by jiali zhang
+
+/duoji/duoji.ino烧到arduino
+
+node内文件全部拷到/home/ros./stella_one/src/command_control/command_center/node
+
+launch文件拷到/home/ros./stella_one/src/command_control/command_center/launch
+
+pourtea_2018拷到/home/ros/robocup/src,编译
+*如果同路径下有carry_2018 canteen_2018 shopping_2018 2017kunshan都移出该路经，不然编译会报错
+
+地图文件夹内shanghai2.pgm shagnhai2.yaml拷到home/ros/robocup/map
+将/home/ros/robocup/src/bringup/simulate-amada.launch的第11行的路径改为/home/ros/robocup/map/shanghai2.yaml

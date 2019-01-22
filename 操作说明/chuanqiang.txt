@@ -1,0 +1,10 @@
+from std_srvs.srv import Empty
+if self.base_sts != 3 and self.base_sts != 4:
+                    pass
+                elif self.base_sts == 4:
+                    add_two_ints=rospy.ServiceProxy('/move_base/clear_costmaps', Empty)
+	            resp1 = add_two_ints()
+                    self.base_sts = None
+                    rospy.sleep(0.5)
+                    self.posePosition(self.point1)
+                else:

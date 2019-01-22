@@ -1,0 +1,52 @@
+舵机文件夹内的ino文件上传到arduino
+
+电脑左USB0，右USB1
+分线器机械臂和arduino一起接时，arduino为USB1
+连接arduino如果报错，启roscore
+
+catch.py 回到初始位置，张开爪子，伸到目标位置，合上爪子，收回
+
+catch_re.py 初始位置，张开爪子，伸到目标位置，合上爪子，左移将杯子放到桌上，张开爪子，后退（防止碰撞目标），合上爪子，回初始位置
+
+catch_voice.py 在catch_re.py的基础上加上了语音反馈，启这个要用catch_voice.launch启，因为需要同时启soundplay_node.py
+
+tea1.py 不含物体识别的完整项目，操作手册为pour tea2
+
+tea.py 加入物体识别，操作手册为pour tea real 和pour tea simulate
+
+test.py 简单移动机械臂供测试
+
+pour_tea1.py 加入机械臂连接测试
+
+pour_tea2.py 机械臂操作单独定义为函数调用
+
+pour_tea.py 加入第二个跑点和物体识别，最终版主框架
+
+Find_Object_with_Color 通过颜色进行物品识别
+
+catch_re2.py 抓取物品，左移（和catch_re.py的差别为不后退，保持重心前置，防止震荡)
+
+nav_test.py 单独测试导航部分，需要同时启动地图和语音
+
+nav_test2.py 添加导航失败后的重新规划
+
+pour_tea_sh1.py 比赛用老坐标
+
+pour_tea_sh2.py 更新坐标
+
+pour.py 倾倒动作
+
+pour_tea_sh.py 赛场实际物品识别
+
+pourtea_2018基于shooping_2018修改而成，仅保留了语音分析部分
+voice.launch同时启了soundplay节点，recognizer节点，voice_analysis节点
+识别的单词发送到话题/voice_cmd（暂时只能输出start和tea）
+先启动voice.launch再启catch_voice.py直接启就行，soundplay节点已经启了
+机械臂操作py文件搬移至/home/ceshi/src/pourtea_2018/src，方便管理，stella_one仅作为机械臂配置包
+如果在pourtea_2018启动报错，将py文件复制到/home/ros/stella_one/src/command_control/command_center/node内启动
+
+
+
+amcl.launch是包含我们机器人tf变换的版本
+命令行测试机械臂用于读取机械臂坐标
+chuanqiang.txt是clear costmap核心部分

@@ -1,0 +1,47 @@
+启动机械臂配置包
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit my_moveit.launch
+
+启动图形界面
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit moveit_rviz.launch
+
+软硬件之间的通信
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+rosrun moveit_master moveit_master_srv
+
+启动机械臂指令service
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center command_bridge_arm_srv.py
+
+连接arduino
+开新终端
+$rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB1
+
+机械臂运动
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center catch_re.py   #catch_re.py
+
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center catch.py    #catch.py
+
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch command_center catch_voice.launch   #catch_voice.py
+
+
+电脑左USB0，右USB1
+分线器机械臂和arduino一起接arduino为USB1

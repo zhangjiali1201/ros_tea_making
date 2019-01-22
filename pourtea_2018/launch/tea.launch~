@@ -1,0 +1,13 @@
+<launch>
+
+
+  <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" output="screen">
+	<!--param name="voice" value="voice_cmu_us_clb_arctic_clunits"/-->
+  </node>
+
+  <!--node name="command_control" pkg="command_center" type="catch_voice.py" output="screen"-->
+  	<param name="voice" value="voice_cmu_us_clb_arctic_clunits"/>
+ 
+  <node pkg="shopping_2018" type="voice_analysis_tea" name="voice_analysis_tea_node" output="screen" />
+
+</launch>

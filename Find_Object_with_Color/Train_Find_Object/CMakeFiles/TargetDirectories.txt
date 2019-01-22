@@ -1,0 +1,1 @@
+/home/zjl/桌面/Find_Object_with_Color/Train_Find_Object/CMakeFiles/DisplayImage.dir

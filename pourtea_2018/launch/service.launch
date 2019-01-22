@@ -1,0 +1,7 @@
+<launch>
+<!--软硬件通信节点-->
+ <node pkg="moveit_master" type="moveit_master_srv" name="moveit_master_srv" output="screen"/>
+
+<!--指令service节点-->
+ <node pkg="command_center" type="command_bridge_arm_srv.py" name="move_arm_server" output="screen" />
+</launch>

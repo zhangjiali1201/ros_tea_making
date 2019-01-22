@@ -1,0 +1,58 @@
+底盘
+$ sudo su
+cd /home/ros/catkin_ws
+source devel/setup.bash
+roslaunch base_controller su_bringuphardware.launch
+
+打开地图
+$ cd /home/ros/robocup
+source devel/setup.bash
+roslaunch bringup amcl_dwa.launch
+
+仿真
+cd /home/ros/robocup
+source devel/setup.bash
+roslaunch bringup simulate-amada.launch
+
+语音
+cd /home/ceshi
+source devel/setup.bash
+roslaunch pourtea_2018 voice.launch
+
+插kinect线
+roslaunch freenect_launch freenect-registered-xyzrgb.launch
+启一下关闭
+
+插机械臂线
+启动机械臂配置包
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit my_moveit.launch
+
+启动图形界面
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch my_moveit moveit_rviz.launch
+
+软硬件之间的通信,机械臂指令service
+$ su
+$ cd /home/ros/stella_one
+source devel/setup.bash
+roslaunch command_center service.launch
+
+插arduino线
+连接arduino
+开新终端
+$rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB1
+
+机械臂
+su
+cd /home/ros/stella_one
+source devel/setup.bash
+rosrun command_center tea.py
+
+电脑左USB0，右USB1
+分线器机械臂和arduino一起接arduino为USB1
+物品图在/home/ros/stella_one

@@ -1,0 +1,12 @@
+<launch>
+
+
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py">
+    <param name="lm" value="$(find command_center)/configs/tea.lm"/>
+    <param name="dict" value="$(find command_center)/configs/tea.dic"/>
+  </node>
+
+
+
+</launch>
+
