@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#for 2018shanghai, pouring tea robot
+#for 2018shanghai
 #edited by jiali zhang, 20180512
 #pour tea competition
 
